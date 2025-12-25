@@ -1,0 +1,32 @@
+{
+    "adapters": [
+        {
+            "name": "primary",
+            "cardId": 0,
+            "cardName": "rockchipes8388",
+            "simple_mixer_ctl_volume": {
+                "playback": [
+                    {
+                        "name": "OUT1 Switch"
+                    },
+                    {
+                        "name": "OUT2 Switch"
+                    }
+                ],
+                "capture": [
+                    {
+                        "name": "OUT1 Switch"
+                    },
+                    {
+                        "name": "OUT2 Switch"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "hdmi",
+            "cardId": 1,
+            "cardName": "rockchiphdmi"
+        }
+    ]
+}
