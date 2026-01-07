@@ -1,0 +1,71 @@
+#include "../sensor_common.hcs"
+root {
+    als_stk33562_chip_config : sensorConfig {
+        match_attr = "hdf_sensor_als_stk33562_driver";
+        sensorInfo :: sensorDeviceInfo {
+            sensorName = "als";
+            vendorName = "stk33562"; // max string length is 16 bytes
+            sensorTypeId = 5; // enum SensorTypeTag
+            sensorId = 5; // user define sensor id
+            power = 286;
+        }
+        sensorBusConfig :: sensorBusInfo {
+            busType = 0; // 0:i2c 1:spi
+            busNum = 4;
+            busAddr = 0x46;
+            regWidth = 1; // 1byte
+        }
+        sensorIdAttr :: sensorIdInfo {
+            chipName = "stk33562";
+            chipIdRegister = 0x3E;
+            chipIdValue = 0x51;
+        }
+        sensorRegConfig {
+            /*  regAddr: register address
+                value: config register value
+                len: size of value
+                mask: mask of value
+                delay: config register delay time (ms)
+                opsType: enum SensorOpsType 0-none 1-read 2-write 3-read_check 4-update_bit
+                calType: enum SensorBitCalType 0-none 1-set 2-revert 3-xor 4-left shift 5-right shift
+                shiftNum: shift bits
+                debug: 0-no debug 1-debug
+                save: 0-no save 1-save
+            */
+            /* regAddr, value, mask, len, delay, opsType, calType, shiftNum, debug, save */
+            initSeqConfig = [
+                //复位、环境光参数寄存器初始化。100ms x1
+                0x80,    0x01, 0xff,   1,     5,       2,       1,        0,     0,    0,
+                0x02,    0x02, 0xff,   1,     5,       2,       1,        0,     0,    0
+            ];
+            enableSeqConfig = [
+                //使能、中断
+                0x00,    0x02, 0x02,   1,     5,        4,       1,        0,     0,    0
+                //0x04,    0x08, 0xff,   1,     5,      2,     1,        0,     0,    0
+            ];
+            disableSeqConfig = [
+                //关闭
+                0x00,    0x00, 0xff,   1,     5,       2,       1,        0,     0,    0
+            ];
+        }
+
+        extendAlsRegConfig {
+            /* regAddr, value, mask, len, delay, opsType, calType, shiftNum, debug, save */
+            time = [
+                0x02,    0x00, 0x0F,   1,     5,       0,       1,        0,     0,    0, // IT_ALS=25ms（0000）
+                0x02,    0x01, 0x0F,   1,     5,       0,       1,        0,     0,    0, // IT_ALS=50ms（0001）
+                0x02,    0x02, 0x0F,   1,     5,       0,       1,        0,     0,    0, // IT_ALS=100ms（0010，default）
+                0x02,    0x03, 0x0F,   1,     5,       0,       1,        0,     0,    0, // IT_ALS=200ms（0011）
+                0x02,    0x04, 0x0F,   1,     5,       0,       1,        0,     0,    0, // IT_ALS=400ms（0100）
+                0x02,    0x05, 0x0F,   1,     5,       0,       1,        0,     0,    0,  // IT_ALS=800ms（0101）
+                0x02,    0x06, 0x0F,   1,     5,       0,       1,        0,     0,    0  // IT_ALS=1600ms（0110）
+            ];
+            gain = [
+                0x02,    0x00, 0x30,   1,     5,       0,       1,        0,     0,    0, // GAIN_ALS=1x（bit5-4=00，default）
+                0x02,    0x10, 0x30,   1,     5,       0,       1,        0,     0,    0, // GAIN_ALS=4x（bit5-4=01）
+                0x02,    0x20, 0x30,   1,     5,       0,       1,        0,     0,    0,  // GAIN_ALS=16x（bit5-4=10）
+                0x02,    0x30, 0x30,   1,     5,       0,       1,        0,     0,    0  // GAIN_ALS=64x（bit5-4=11）
+            ];
+        }
+    }
+}
