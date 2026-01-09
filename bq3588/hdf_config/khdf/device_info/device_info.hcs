@@ -864,7 +864,7 @@
                     preload = 2;
                     permission = 0666;
                     moduleName = "HDF_AUDIO";
-                    deviceMatchAttr = "hdf_audio_driver_2";
+                    deviceMatchAttr = "hdf_audio_driver_3";
                     serviceName = "hdf_audio_codec_usb_dev0";
                 }
             }
