@@ -1,0 +1,150 @@
+{
+    "hdf_audio_codec_primary_dev0": [
+        {
+            "deep-buffer-playback": [
+                {
+                    "headphones": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "Headphone Switch",
+                            "value": 1
+                        }
+                    ],
+                    "Speaker": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        }
+                    ],
+                    "mic": [
+                        {
+                            "name": "Main Mic Switch",
+                            "value": 1
+                        }
+                    ]
+                }
+            ],
+            "low-latency-communication": [
+                {
+                    "Speaker": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        }
+                    ],
+                    "headphones": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "Headphone Switch",
+                            "value": 1
+                        }
+                    ],
+                    "mic": [
+                        {
+                            "name": "Main Mic Switch",
+                            "value": 1
+                        }
+                    ]
+                }
+            ],
+            "ringtone-playback": [
+                {
+                    "Speaker": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        }
+                    ]
+                }
+            ],
+            "voice-call": [
+                {
+                    "Speaker": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        }
+                    ],
+                    "headphones": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "Headphone Switch",
+                            "value": 1
+                        }
+                    ],
+                    "mic": [
+                        {
+                            "name": "Main Mic Switch",
+                            "value": 1
+                        }
+                    ]
+                }
+            ],
+            "low-latency-noirq-playback": [
+                {
+                    "Speaker": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        }
+                    ],
+                    "headphones": [
+                        {
+                            "name": "OUT1 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "OUT2 Switch",
+                            "value": 1
+                        },
+                        {
+                            "name": "Headphone Switch",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "parts": {
+    "product_bq3588": {
+      "module_list": [
+        "//vendor/bearkey/bq3588/default_app_config:default_app_config",
+        "//vendor/bearkey/bq3588/image_conf:custom_image_conf",
+        "//vendor/bearkey/bq3588/preinstall-config:preinstall-config",
+        "//vendor/bearkey/bq3588/resourceschedule:resourceschedule",
+        "//vendor/bearkey/bq3588/etc:product_etc_conf",
+        "//vendor/bearkey/bq3588/hals/audio:hdf_audio_config",
+        "//vendor/bearkey/bq3588/hals/codec/:hdf_codec_config",
+        "//vendor/bearkey/bq3588/hdf_config/uhdf:hdf_config",
+        "//vendor/bearkey/bq3588/window_config:window_config"
+      ]
+    }
+  },
+  "subsystem": "product_bearkey"
+}
