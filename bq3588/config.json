@@ -65,6 +65,14 @@
       "subsystem": "hdf",
       "components": [
         {
+          "component": "drivers_peripheral_nnrt",
+          "features": []
+        },
+        {
+          "component": "drivers_interface_nnrt",
+          "features": []
+        },
+        {
           "component": "drivers_interface_lpplayer",
           "features":[]
         },
@@ -327,6 +335,7 @@
           "component": "graphic_2d",
           "features": [
             "graphic_2d_feature_rs_enable_eglimage = true",
+	    "graphic_2d_feature_rs_enable_uni_render = true",
             "graphic_2d_feature_use_texgine = true",
             "graphic_2d_feature_upgrade_skia = true"
           ]
