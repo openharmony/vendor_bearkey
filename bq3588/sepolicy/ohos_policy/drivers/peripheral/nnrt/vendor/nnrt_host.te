@@ -1,0 +1,42 @@
+# Copyright (c) 2023 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+allow nnrt_host dev_hdf_kevent:chr_file { read write open ioctl };
+allowxperm nnrt_host dev_hdf_kevent:chr_file ioctl { 0x6201 0x6202 0x6203 };
+allow nnrt_host hilog_param:file { read open map };
+allow nnrt_host sh:binder { transfer };
+allow nnrt_host samgr:binder { call };
+allow nnrt_host dev_ashmem_file:chr_file { open };
+allow nnrt_host dev_unix_socket:dir { search };
+allow nnrt_host hdf_device_manager:hdf_devmgr_class { get };
+allow nnrt_host dev_console_file:chr_file { read write };
+allow nnrt_host debug_param:file { read open map };
+allow nnrt_host sa_device_service_manager:samgr_class { get };
+allow nnrt_host hdf_devmgr:binder { call transfer };
+allow nnrt_host sysfs_devices_system_cpu:file { read open getattr };
+#allow nnrt_host self:capability dac_override;
+allow nnrt_host persist_param:file { read open getattr map };
+allow nnrt_host vendor_etc_file:dir { search };
+allow nnrt_host chip_prod_file:dir { search };
+allow nnrt_host vendor_etc_file:file { read open getattr map };
+allow nnrt_host data_file:dir { search write add_name };
+allow nnrt_host dev_dri_file:dir { getattr search write remove_name };
+#allow nnrt_host data_file:file { write open create };
+allow nnrt_host data_file:file { open };
+allow nnrt_host dev_dri_file:chr_file { getattr read write open map };
+allow nnrt_host dev_dri_file:chr_file { ioctl };
+allowxperm nnrt_host dev_dri_file:chr_file ioctl { 0x6400 0x6401 0x6440 0x6442 0x640a 0x642d 0x6443 0x6444 0x6445 0x6441 };
+allow nnrt_host sys_file:file { read open getattr };
+allow nnrt_host hdf_nnrt_device_service:binder { call };
+allow nnrt_host hdf_nnrt_device_service:hdf_devmgr_class { add get };
+allow nnrt_host system_core_hap:binder { transfer call };
