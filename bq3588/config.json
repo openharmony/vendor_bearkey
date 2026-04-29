@@ -19,7 +19,7 @@
         {
           "component": "selinux_adapter",
           "features": [
-	    "selinux_adapter_build_path = vendor/bearkey/bq3588/sepolicy"
+	    "selinux_adapter_build_path = vendor/bearkey/bq3588/sepolicy/base:vendor/bearkey/bq3588/sepolicy/ohos_policy"
 	  ]
         }
       ]
