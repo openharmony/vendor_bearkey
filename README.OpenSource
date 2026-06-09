@@ -1,6 +1,6 @@
 [
     {
-        "Name": "device_soc_unisoc",
+        "Name": "vendor_bearkey",
         "License": "Apache 2.0 License",
         "License File": "LICENSE",
         "Version Number": "",

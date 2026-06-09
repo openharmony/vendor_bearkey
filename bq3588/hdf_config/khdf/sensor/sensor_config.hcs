@@ -1,5 +1,5 @@
 #include "accel/bmi160_config.hcs"
-#include "accel/mxc6655xa_config.hcs"
+#include "accel/sc7a20_config.hcs"
 #include "als/bh1745_config.hcs"
 #include "accel/accel_lsm6ds3tr_config.hcs"
 #include "gyro/gyro_lsm6ds3tr_config.hcs"

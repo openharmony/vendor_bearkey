@@ -19,7 +19,7 @@
         {
           "component": "selinux_adapter",
           "features": [
-	    "selinux_adapter_build_path = vendor/bearkey/bq3588/sepolicy"
+	    "selinux_adapter_build_path = vendor/bearkey/bq3588/sepolicy/base:vendor/bearkey/bq3588/sepolicy/ohos_policy"
 	  ]
         }
       ]
@@ -65,6 +65,14 @@
       "subsystem": "hdf",
       "components": [
         {
+          "component": "drivers_peripheral_nnrt",
+          "features": []
+        },
+        {
+          "component": "drivers_interface_nnrt",
+          "features": []
+        },
+        {
           "component": "drivers_interface_lpplayer",
           "features":[]
         },
@@ -98,6 +106,12 @@
           "features": [
             "drivers_peripheral_codec_feature_support_omx_extend_test = true",
             "drivers_peripheral_codec_feature_support_hdi_v1 = true"
+          ]
+        },
+        {
+          "component": "drivers_peripheral_camera",
+          "features": [
+            "drivers_peripheral_camera_feature_fork_dma = true"
           ]
         },
         {
@@ -321,6 +335,7 @@
           "component": "graphic_2d",
           "features": [
             "graphic_2d_feature_rs_enable_eglimage = true",
+	    "graphic_2d_feature_rs_enable_uni_render = true",
             "graphic_2d_feature_use_texgine = true",
             "graphic_2d_feature_upgrade_skia = true"
           ]
