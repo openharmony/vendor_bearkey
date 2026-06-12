@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020-2021 Huawei Device Co., Ltd.
+# Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
 #
 # This software is licensed under the terms of the GNU General Public
 # License version 2, as published by the Free Software Foundation, and
