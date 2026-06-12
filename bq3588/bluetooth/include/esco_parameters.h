@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright 2015 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@ typedef enum {
     SCO_CODEC_NONE = 0x0000,
     SCO_CODEC_CVSD = 0x0001,
     SCO_CODEC_MSBC = 0x0002,
-} sco_codec_t;
+} ScoCodecT;
 
 typedef enum {
     ESCO_CODEC_CVSD = 0,
     ESCO_CODEC_MSBC_T1,
     ESCO_CODEC_MSBC_T2,
-} esco_codec_t;
+} EscoCodecT;
 
 #define ESCO_NUM_CODECS 3
 
@@ -84,39 +84,39 @@ typedef enum {
 
 // type definition
 typedef struct {
-    uint8_t coding_format;             /* Coding Format */
-    uint16_t company_id;               /* Company ID from BT SIG Assigned Numbers */
-    uint16_t vendor_specific_codec_id; /* Vendor Specific Codec ID */
-} esco_coding_id_format_t;
+    uint8_t codingFormat;             /* Coding Format */
+    uint16_t companyId;               /* Company ID from BT SIG Assigned Numbers */
+    uint16_t vendorSpecificCodecId; /* Vendor Specific Codec ID */
+} EscoCodingIdFormatT;
 
 // Enhanced setup/accept synchronous connection See BT 4.1 or later HCI spec for
 // details
 typedef struct {
-    uint32_t transmit_bandwidth;                    /* Transmit Bandwidth (in octets/second) */
-    uint32_t receive_bandwidth;                     /* RX BW (# of octets/second) */
-    esco_coding_id_format_t transmit_coding_format; /* TX coding format */
-    esco_coding_id_format_t receive_coding_format;  /* RX coding format */
-    uint16_t transmit_codec_frame_size;             /* TX CODEC frame size (OTA frame size) */
-    uint16_t receive_codec_frame_size;              /* RX CODEC frame size (OTA frame size) */
-    uint32_t input_bandwidth;                       /* Input BW (nominal rate octets/sec) */
-    uint32_t output_bandwidth;                      /* Output BW (nominal rate octets/sec) */
-    esco_coding_id_format_t input_coding_format;    /* Input coding format */
-    esco_coding_id_format_t output_coding_format;   /* Output coding format */
-    uint16_t input_coded_data_size;                 /* Input coded data size (in bits) */
-    uint16_t output_coded_data_size;                /* Output coded data size (in bits) */
-    uint8_t input_pcm_data_format;                  /* Input PCM data format (see hcidefs.h) */
-    uint8_t output_pcm_data_format;                 /* Output PCM data format (see hcidefs.h) */
-    uint8_t input_pcm_payload_msb_position;         /* Input PCM sample payload MSB position */
-    uint8_t output_pcm_payload_msb_position;        /* Output PCM sample payload MSB position */
-    uint8_t input_data_path;                        /* 0x00 - HCI, or 0x01-0xFE for VS) */
-    uint8_t output_data_path;                       /* 0x00 - HCI, or 0x01-0xFE for VS) */
-    uint8_t input_transport_unit_size;              /* Input transport unit size */
-    uint8_t output_transport_unit_size;             /* Output transport unit size */
-    uint16_t max_latency_ms;                        /* Maximum latency (0x4-0xFFFE in msecs) */
-    uint16_t packet_types;                          /* Packet Types */
-    uint8_t retransmission_effort;                  /* 0x00-0x02, 0xFF don't care */
-} enh_esco_params_t;
+    uint32_t transmitBandwidth;                    /* Transmit Bandwidth (in octets/second) */
+    uint32_t receiveBandwidth;                     /* RX BW (# of octets/second) */
+    EscoCodingIdFormatT transmitCodingFormat; /* TX coding format */
+    EscoCodingIdFormatT receiveCodingFormat;  /* RX coding format */
+    uint16_t transmitCodecFrameSize;             /* TX CODEC frame size (OTA frame size) */
+    uint16_t receiveCodecFrameSize;              /* RX CODEC frame size (OTA frame size) */
+    uint32_t inputBandwidth;                       /* Input BW (nominal rate octets/sec) */
+    uint32_t outputBandwidth;                      /* Output BW (nominal rate octets/sec) */
+    EscoCodingIdFormatT inputCodingFormat;    /* Input coding format */
+    EscoCodingIdFormatT outputCodingFormat;   /* Output coding format */
+    uint16_t inputCodedDataSize;                 /* Input coded data size (in bits) */
+    uint16_t outputCodedDataSize;                /* Output coded data size (in bits) */
+    uint8_t inputPcmDataFormat;                  /* Input PCM data format (see hcidefs.h) */
+    uint8_t outputPcmDataFormat;                 /* Output PCM data format (see hcidefs.h) */
+    uint8_t inputPcmPayloadMsbPosition;         /* Input PCM sample payload MSB position */
+    uint8_t outputPcmPayloadMsbPosition;        /* Output PCM sample payload MSB position */
+    uint8_t inputDataPath;                        /* 0x00 - HCI, or 0x01-0xFE for VS) */
+    uint8_t outputDataPath;                       /* 0x00 - HCI, or 0x01-0xFE for VS) */
+    uint8_t inputTransportUnitSize;              /* Input transport unit size */
+    uint8_t outputTransportUnitSize;             /* Output transport unit size */
+    uint16_t maxLatencyMs;                        /* Maximum latency (0x4-0xFFFE in msecs) */
+    uint16_t packetTypes;                          /* Packet Types */
+    uint8_t retransmissionEffort;                  /* 0x00-0x02, 0xFF don't care */
+} EnhEscoParamsT;
 
 // Get the enhanced eSCO configuration parameters for the provided |codec|
-enh_esco_params_t esco_parameters_for_codec(esco_codec_t codec);
+EnhEscoParamsT EscoParametersForCodec(EscoCodecT codec);
 #endif

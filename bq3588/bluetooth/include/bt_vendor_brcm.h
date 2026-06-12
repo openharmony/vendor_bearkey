@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright (C) 2009-2012 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -437,17 +437,17 @@
 **  Extern variables and functions
 ******************************************************************************/
 
-extern bt_vendor_callbacks_t *bt_vendor_cbacks;
+extern BtVendorCallbacksT *g_btVendorCbacks;
 /** audio (SCO) state changes triggering VS commands for configuration */
 typedef struct {
     uint16_t handle;
-    uint16_t peer_codec;
+    uint16_t peerCodec;
     uint16_t state;
-} bt_vendor_op_audio_state_t;
+} BtVendorOpAudioStateT;
 
-extern int hw_set_audio_state(bt_vendor_op_audio_state_t *p_state);
-extern uint8_t vnd_local_bd_addr[BD_ADDR_LEN];
+extern int HwSetAudioState(BtVendorOpAudioStateT *pState);
+extern uint8_t g_vndLocalBdAddr[BD_ADDR_LEN];
 
-extern void hw_process_event(HC_BT_HDR *);
+extern void HwProcessEvent(HcBtHdrT *);
 
 #endif /* BT_VENDOR_BRCM_H */
