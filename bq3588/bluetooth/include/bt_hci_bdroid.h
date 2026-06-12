@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright 2009-2012 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@
 /* Host/Controller lib internal event ID */
 typedef enum {
     HC_EVENT_LPM_IDLE_TIMEOUT,
-} bthc_event_t;
+} BtHcEventT;
 
 /* Message event mask across Host/Controller lib and stack */
 #define MSG_EVT_MASK 0xFF00     /* eq. BT_EVT_MASK */
@@ -64,7 +64,7 @@ typedef enum {
 /* Local Bluetooth Controller ID for BR/EDR */
 #define LOCAL_BR_EDR_CONTROLLER_ID 0
 
-#define BT_HC_HDR_SIZE (sizeof(HC_BT_HDR))
+#define BT_HC_HDR_SIZE (sizeof(HcBtHdrT))
 /******************************************************************************
  *  Extern variables and functions
  *****************************************************************************/

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,8 @@
 #define BT_VENDOR_LOG_H
 
 #include "hilog/log.h"
+#undef LOG_DOMAIN
+#define LOG_DOMAIN 0xD000102
 
 #define HILOGD(...) HiLogPrint(LOG_CORE, LOG_DEBUG, LOG_DOMAIN, "BTVENDOR", __VA_ARGS__)
 #define HILOGI(...) HiLogPrint(LOG_CORE, LOG_INFO, LOG_DOMAIN, "BTVENDOR", __VA_ARGS__)
