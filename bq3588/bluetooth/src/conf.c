@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright (C) 2009-2012 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -35,11 +35,11 @@
 /******************************************************************************
 **  Externs
 ******************************************************************************/
-int userial_set_port(char *p_conf_name, char *p_conf_value, int param);
-int hw_set_patch_file_path(char *p_conf_name, char *p_conf_value, int param);
-int hw_set_patch_file_name(char *p_conf_name, char *p_conf_value, int param);
+int UserialSetPort(char *pConfName, char *pConfValue, int param);
+int HwSetPatchFilePath(char *pConfName, char *pConfValue, int param);
+int HwSetPatchFileName(char *pConfName, char *pConfValue, int param);
 #if (VENDOR_LIB_RUNTIME_TUNING_ENABLED == TRUE)
-int hw_set_patch_settlement_delay(char *p_conf_name, char *p_conf_value, int param);
+int HwSetPatchSettlementDelay(char *pConfName, char *pConfValue, int param);
 #endif
 
 /******************************************************************************
@@ -51,13 +51,13 @@ int hw_set_patch_settlement_delay(char *p_conf_name, char *p_conf_value, int par
 #define CONF_VALUES_DELIMITERS "=\n\r\t"
 #define CONF_MAX_LINE_LEN 255
 
-typedef int(conf_action_t)(char *p_conf_name, char *p_conf_value, int param);
+typedef int(ConfActionT)(char *pConfName, char *pConfValue, int param);
 
 typedef struct {
-    const char *conf_entry;
-    conf_action_t *p_action;
+    const char *confEntry;
+    ConfActionT *pAction;
     int param;
-} conf_entry_t;
+} ConfEntryT;
 
 /******************************************************************************
 **  Static variables
@@ -66,12 +66,12 @@ typedef struct {
 /*
  * Current supported entries and corresponding action functions
  */
-static const conf_entry_t conf_table[] = {
-    {"UartPort", userial_set_port, 0},
-    {"FwPatchFilePath", hw_set_patch_file_path, 0},
-    {"FwPatchFileName", hw_set_patch_file_name, 0},
+static const ConfEntryT CONF_TABLE[] = {
+    {"UartPort", UserialSetPort, 0},
+    {"FwPatchFilePath", HwSetPatchFilePath, 0},
+    {"FwPatchFileName", HwSetPatchFileName, 0},
 #if (VENDOR_LIB_RUNTIME_TUNING_ENABLED == TRUE)
-    {"FwPatchSettlementDelay", hw_set_patch_settlement_delay, 0},
+    {"FwPatchSettlementDelay", HwSetPatchSettlementDelay, 0},
 #endif
     {(const char *)NULL, NULL, 0}
 };
@@ -82,55 +82,55 @@ static const conf_entry_t conf_table[] = {
 
 /*******************************************************************************
 **
-** Function        vnd_load_conf
+** Function        VndLoadConf
 **
-** Description     Read conf entry from p_path file one by one and call
+** Description     Read conf entry from pPath file one by one and call
 **                 the corresponding config function
 **
 ** Returns         None
 **
 *******************************************************************************/
-void vnd_load_conf(const char *p_path)
+void VndLoadConf(const char *pPath)
 {
-    FILE *p_file;
-    char *p_name;
-    char *p_value;
-    conf_entry_t *p_entry;
+    FILE *pFile;
+    char *pName;
+    char *pValue;
+    ConfEntryT *pEntry;
     char line[CONF_MAX_LINE_LEN + 1]; /* add 1 for \0 char */
 
-    HILOGI("Attempt to load conf from %s", p_path);
-    if ((p_file = fopen(p_path, "r")) == NULL) {
-        HILOGI("vnd_load_conf file >%s< not found", p_path);
+    HILOGI("Attempt to load conf from %s", pPath);
+    if ((pFile = fopen(pPath, "r")) == NULL) {
+        HILOGI("VndLoadConf file >%s< not found", pPath);
         return;
     }
 
     /* read line by line */
-    while (fgets(line, CONF_MAX_LINE_LEN + 1, p_file) != NULL) {
+    while (fgets(line, CONF_MAX_LINE_LEN + 1, pFile) != NULL) {
         if (line[0] == CONF_COMMENT) {
             continue;
         }
 
-        p_name = strtok(line, CONF_DELIMITERS);
-        if (p_name == NULL) {
+        pName = strtok(line, CONF_DELIMITERS);
+        if (pName == NULL) {
             continue;
         }
 
-        p_value = strtok(NULL, CONF_DELIMITERS);
-        if (p_value == NULL) {
-            HILOGW("vnd_load_conf: missing value for name: %s", p_name);
+        pValue = strtok(NULL, CONF_DELIMITERS);
+        if (pValue == NULL) {
+            HILOGW("VndLoadConf: missing value for name: %s", pName);
             continue;
         }
 
-        p_entry = (conf_entry_t *)conf_table;
-        while (p_entry->conf_entry != NULL) {
-            if (strcmp(p_entry->conf_entry, (const char *)p_name) == 0) {
-                p_entry->p_action(p_name, p_value, p_entry->param);
+        pEntry = (ConfEntryT *)CONF_TABLE;
+        while (pEntry->confEntry != NULL) {
+            if (strcmp(pEntry->confEntry, (const char *)pName) == 0) {
+                pEntry->pAction(pName, pValue, pEntry->param);
                 break;
             }
 
-            p_entry++;
+            pEntry++;
         }
     }
 
-    (void)fclose(p_file);
+    (void)fclose(pFile);
 }

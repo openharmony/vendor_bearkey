@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright (C) 2009-2012 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@
 typedef struct {
     uint16_t fmt; /* Data format */
     uint8_t baud; /* Baud rate */
-} tUSERIAL_CFG;
+} TUserialCfg;
 
 typedef enum {
 #if (BT_WAKE_VIA_USERIAL_IOCTL == TRUE)
@@ -120,7 +120,7 @@ typedef enum {
     USERIAL_OP_GET_BT_WAKE_STATE,
 #endif
     USERIAL_OP_NOP,
-} userial_vendor_ioctl_op_t;
+} UserialVendorIoctlOpT;
 
 /******************************************************************************
 **  Extern variables and functions
@@ -132,57 +132,57 @@ typedef enum {
 
 /*******************************************************************************
 **
-** Function        userial_vendor_init
+** Function        UserialVendorInit
 **
 ** Description     Initialize userial vendor-specific control block
 **
 ** Returns         None
 **
 *******************************************************************************/
-void userial_vendor_init(void);
+void UserialVendorInit(void);
 
 /*******************************************************************************
 **
-** Function        userial_vendor_open
+** Function        UserialVendorOpen
 **
 ** Description     Open the serial port with the given configuration
 **
 ** Returns         device fd
 **
 *******************************************************************************/
-int userial_vendor_open(tUSERIAL_CFG *p_cfg);
+int UserialVendorOpen(TUserialCfg *pCfg);
 
 /*******************************************************************************
 **
-** Function        userial_vendor_close
+** Function        UserialVendorClose
 **
 ** Description     Conduct vendor-specific close work
 **
 ** Returns         None
 **
 *******************************************************************************/
-void userial_vendor_close(void);
+void UserialVendorClose(void);
 
 /*******************************************************************************
 **
-** Function        userial_vendor_set_baud
+** Function        UserialVendorSetBaud
 **
 ** Description     Set new baud rate
 **
 ** Returns         None
 **
 *******************************************************************************/
-void userial_vendor_set_baud(uint8_t userial_baud);
+void UserialVendorSetBaud(uint8_t userialBaud);
 
 /*******************************************************************************
 **
-** Function        userial_vendor_ioctl
+** Function        UserialVendorIoctl
 **
 ** Description     ioctl inteface
 **
 ** Returns         None
 **
 *******************************************************************************/
-void userial_vendor_ioctl(userial_vendor_ioctl_op_t op, void *p_data);
+void UserialVendorIoctl(UserialVendorIoctlOpT op, void *pData);
 
 #endif /* USERIAL_VENDOR_H */

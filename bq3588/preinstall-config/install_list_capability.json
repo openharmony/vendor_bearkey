@@ -86,14 +86,6 @@
             "allowAppUsePrivilegeExtension": true
         },
         {
-            "bundleName": "com.huawei.ohos.hiviewx",
-            "singleton": true,
-            "keepAlive": true,
-            "app_signature" : ["57D4E9DFE7504D12EB6ACAF39876F420BCABCA2F4721989B90FD2E4F1FB7ED2B"],
-            "allowCommonEvent": [],
-            "allowAppUsePrivilegeExtension": true
-        },
-        {
             "bundleName": "com.ohos.inputmethodchoosedialog",
             "app_signature" : ["CE4D01EF424B829E13652BB1743E18B8E4542DD5A7BBA7D7D472F727FA6F8A9D"],
             "allowAppDesktopIconHide": true,

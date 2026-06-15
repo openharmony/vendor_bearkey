@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright 2009-2012 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -44,11 +44,11 @@ typedef enum {
     USERIAL_PORT_16,
     USERIAL_PORT_17,
     USERIAL_PORT_18,
-} userial_port_t;
+} UserialPortT;
 
 // Initializes the userial module. This function should only be called once.
 // It returns true if the module was initialized, false if there was an error.
-bool userial_init(void);
+bool UserialInit(void);
 
 // Opens the given serial port. Returns true if successful, false otherwise.
 // Once this function is called, the userial module will begin producing
@@ -57,17 +57,17 @@ bool userial_init(void);
 // by calling |userial_resume_reading|. This function returns true if the
 // serial port was successfully opened and buffer production has started. It
 // returns false if there was an error.
-bool userial_open(userial_port_t port);
-void userial_close(void);
-void userial_close_reader(void);
+bool UserialOpen(UserialPortT port);
+void UserialClose(void);
+void UserialCloseReader(void);
 
-// Reads a maximum of |len| bytes from the serial port into |p_buffer|.
+// Reads a maximum of |len| bytes from the serial port into |pBuffer|.
 // This function returns the number of bytes actually read, which may be
 // less than |len|. This function will not block.
-uint16_t userial_read(uint16_t msg_id, uint8_t *p_buffer, uint16_t len);
+uint16_t UserialRead(uint16_t msgId, uint8_t *pBuffer, uint16_t len);
 
-// Writes a maximum of |len| bytes from |p_data| to the serial port.
+// Writes a maximum of |len| bytes from |pData| to the serial port.
 // This function returns the number of bytes actually written, which may be
 // less than |len|. This function may block.
-uint16_t userial_write(uint16_t msg_id, const uint8_t *p_data, uint16_t len);
+uint16_t UserialWrite(uint16_t msgId, const uint8_t *pData, uint16_t len);
 #endif
