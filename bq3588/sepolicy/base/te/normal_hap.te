@@ -1,0 +1,3 @@
+allow normal_hap_attr dev_mali:chr_file { ioctl };
+allowxperm normal_hap_attr dev_mali:chr_file ioctl { 0x8029 0x802b 0x802e };
+

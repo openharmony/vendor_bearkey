@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- *  Copyright (C) 2009-2012 Broadcom Corporation
+ *  Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -60,29 +60,29 @@ enum {
 
 /*******************************************************************************
 **
-** Function        upio_init
+** Function        UpioInit
 **
 ** Description     Initialization
 **
 ** Returns         None
 **
 *******************************************************************************/
-void upio_init(void);
+void UpioInit(void);
 
 /*******************************************************************************
 **
-** Function        upio_cleanup
+** Function        UpioCleanup
 **
 ** Description     Clean up
 **
 ** Returns         None
 **
 *******************************************************************************/
-void upio_cleanup(void);
+void UpioCleanup(void);
 
 /*******************************************************************************
 **
-** Function        upio_set_bluetooth_power
+** Function        UpioSetBluetoothPower
 **
 ** Description     Interact with low layer driver to set Bluetooth power
 **                 on/off.
@@ -91,18 +91,18 @@ void upio_cleanup(void);
 **                 <0 : ERROR
 **
 *******************************************************************************/
-int upio_set_bluetooth_power(int on);
+int UpioSetBluetoothPower(int on);
 
 /*******************************************************************************
 **
-** Function        upio_set
+** Function        UpioSet
 **
 ** Description     Set i/o based on polarity
 **
 ** Returns         None
 **
 *******************************************************************************/
-void upio_set(uint8_t pio, uint8_t action, uint8_t polarity);
+void UpioSet(uint8_t pio, uint8_t action, uint8_t polarity);
 
 #endif /* UPIO_H */
 
