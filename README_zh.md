@@ -29,7 +29,7 @@ vendor/bearkey/bq3588       # 贝启BQ3588HM开发板
 
 ## 使用方法
 
-[BQ3588HM开发板使用说明]([device_board_bearkey-代码预览-device_board_bearkey:基于OpenHarmony的RK3588开发板项目 - AtomGit](https://gitcode.com/openharmony-sig/device_board_bearkey/blob/OpenHarmony_standard_p7885_rk3588_d3000m_20251103/README.md))
+[BQ3588HM开发板使用说明]([device_board_bearkey-代码预览-device_board_bearkey:基于OpenHarmony的RK3588开发板项目 - AtomGit](https://gitcode.com/openharmony-sig/device_board_bearkey/blob/master/README.md))
 
 ## 许可说明
 
@@ -37,6 +37,6 @@ vendor/bearkey/bq3588       # 贝启BQ3588HM开发板
 
 ## 相关仓
 
-* [device/board/bearkey](https://gitee.com/openharmony/device_board_bearkey)
-* [device/soc/rockchip](https://gitee.com/openharmony/device_soc_rockchip)
+* [device/board/bearkey](https://gitcode.com/openharmony-sig/device_board_bearkey)
+* [device/soc/rockchip](https://gitcode.com/openharmony-sig/device_soc_rockchip)
 
