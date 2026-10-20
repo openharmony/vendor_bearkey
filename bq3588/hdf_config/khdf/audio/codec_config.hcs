@@ -169,6 +169,44 @@ root {
                     8,  2,  0,  1,
                     9,  2,  0,  1,
                 ];
+
+                ctrlSapmParamsSeqConfig = [
+                    0x10,    0x10,    4,    4,    0x0,    0xF,    0xF,    0,    0x00, // LPGA MIC  -- connect MIC
+                    0x10,    0x10,    4,    4,    0x0,	  0xF,	  0xF,	  0,	0x05,  // RPGA MIC  -- connect MicHeadphone
+                    0x04,    0x04,    4,    4,	  0x0,	  0x03,	  0x03,	  0,    0x03, // Speaker1 Switch  -- connect speaker
+                    0x04,    0x04,    2,    2,	  0x0,	  0x03,	  0x03,	  0,    0x03  // Headphone1 Switch  -- connect Headphone
+
+                ];
+
+                /*
+                 reg is 0xFFFF: component has no sapm register bit
+                 sapmType, compNameIndex, reg, mask, shift, invert, kcontrolNews, kcontrolsNum
+                */
+                sapmComponent = [
+                    10,      0,       0x18,       0x1,     7,     1,     0,     0,  //ADCL
+                    10,      1,       0x18,       0x1,     6,     1,     0,     0,  //ADCR
+                    11,     32,     0xFFFF,    0xFFFF,     0,     0,     0,     0,  //DAC1
+                    11,     33,     0xFFFF,    0xFFFF,     0,     0,     0,     0,  //DAC2
+                    11,     34,     0xFFFF,    0xFFFF,     0,     0,     0,     0,  //DAC3
+                    6,      52,     0xFFFF,    0xFFFF,     0,     0,     3,     1,  //SPKL PGA
+                    6,      54,     0xFFFF,    0xFFFF,     0,     0,     4,     1,  //HPL PGA
+                    6,      55,     0xFFFF,    0xFFFF,     0,     0,     5,     1,  //HPR PGA
+                    15,      6,     0xFFFF,    0xFFFF,     0,     0,     0,     0,  //SPK
+                    14,     10,     0xFFFF,    0xFFFF,     0,     0,     0,     0,  //HPL
+                    14,     11,     0xFFFF,    0xFFFF,     0,     0,     0,     0,  //HPR
+                    6,       4,     0xFFFF,    0xFFFF,     6,     0,     1,     1,  //LPGA
+                    6,       5,     0xFFFF,    0xFFFF,     6,     0,     2,     1,  //RPGA
+                    13,     40,     0xFFFF,    0xFFFF,     6,     0,     0,     0,  //MIC1
+                    13,     41,       0x4d,       0x1,     1,     0,     0,     0   //MIC2
+                ];
+
+                /*array index, iface, mixer/mux, enable*/
+                sapmConfig = [
+                    0,     2,    0,    1, //LPGA MIC Switch
+                    1,     2,    0,    1, //RPGA MIC Switch
+                    24,    2,    0,    1, //Speaker1 Switch
+                    28,    2,    0,    1  //Headphone1 Switch
+                ];
            }
         }
         controller_0x120c1031 :: codec_controller {
