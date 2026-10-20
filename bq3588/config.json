@@ -45,10 +45,6 @@
           ]
         },
         {
-          "component": "idlize",
-          "features": []
-        },
-        {
           "component": "ui_appearance",
           "features": []
         }
