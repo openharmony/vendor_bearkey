@@ -10,7 +10,7 @@
   "enable_ramdisk": true,
   "enable_absystem": false,
   "build_selinux": true,
-  "build_seccomp": true,
+  "build_seccomp": false,
   "inherit": [ "productdefine/common/inherit/rich.json", "productdefine/common/inherit/chipset_common.json" ],
   "subsystems": [
     {
@@ -19,7 +19,7 @@
         {
           "component": "selinux_adapter",
           "features": [
-	    "selinux_adapter_build_path = vendor/bearkey/bq3588/sepolicy/base:vendor/bearkey/bq3588/sepolicy/ohos_policy"
+	    "selinux_adapter_enforce = false"
 	  ]
         }
       ]
@@ -45,6 +45,10 @@
           ]
         },
         {
+          "component": "idlize",
+          "features": []
+        },
+        {
           "component": "ui_appearance",
           "features": []
         }
@@ -65,14 +69,6 @@
       "subsystem": "hdf",
       "components": [
         {
-          "component": "drivers_peripheral_nnrt",
-          "features": []
-        },
-        {
-          "component": "drivers_interface_nnrt",
-          "features": []
-        },
-        {
           "component": "drivers_interface_lpplayer",
           "features":[]
         },
@@ -90,12 +86,13 @@
         },
         {
           "component": "drivers_interface_audio",
-          "features": []
+          "features": [
+            "drivers_interface_audio_community = true"
+          ]
         },
         {
           "component": "drivers_peripheral_audio",
           "features": [
-	    "drivers_peripheral_audio_feature_hal_notsupport_pathselect = true",
             "drivers_peripheral_audio_feature_full_test_suite = true",
             "drivers_peripheral_audio_feature_alsa_lib = false",
             "drivers_peripheral_audio_feature_effect = true"
@@ -106,12 +103,6 @@
           "features": [
             "drivers_peripheral_codec_feature_support_omx_extend_test = true",
             "drivers_peripheral_codec_feature_support_hdi_v1 = true"
-          ]
-        },
-        {
-          "component": "drivers_peripheral_camera",
-          "features": [
-            "drivers_peripheral_camera_feature_fork_dma = true"
           ]
         },
         {
@@ -136,6 +127,14 @@
             "hdf_core_platform_test_support = false",
             "hdf_core_default_peripheral_config = false"
           ]
+        },
+        {
+          "component": "drivers_tools",
+          "features": []
+        },
+        {
+          "component": "drivers_devhost",
+          "features": []
         }
       ]
     },
@@ -202,7 +201,9 @@
           "features": [
             "audio_framework_feature_dtmf_tone = true",
             "audio_framework_feature_opensl_es = true",
-            "audio_framework_feature_support_os_account = false"
+            "audio_framework_feature_support_os_account = false",
+            "audio_framework_feature_audiosuite_support = true",
+            "audio_framework_feature_hdmi_detect_audio = true"
           ]
         },
         {
@@ -213,6 +214,12 @@
           "component": "image_framework",
           "features": [
             "image_framework_feature_upgrade_skia = true"
+          ]
+        },
+        {
+          "component": "av_session",
+          "syscap": [
+            "SystemCapability.Multimedia.AVSession.AVInputCast = true"
           ]
         }
       ]
@@ -266,12 +273,6 @@
           "features": []
         },
         {
-          "component": "qrcodegen",
-          "features": [
-            "qrcodegen_feature_ace_engine_qrcode_able = true"
-          ]
-        },
-        {
           "component": "alsa-lib",
           "features": [
             "alsa_lib_feature_config_enable = true"
@@ -290,10 +291,18 @@
           "features": []
         },
         {
+          "component": "expat",
+          "features": []
+        },
+        {
           "component": "skia",
           "features": [
             "skia_feature_upgrade = true"
           ]
+        },
+        {
+          "component": "vma",
+          "features": []
         },
         {
           "component": "optimized_routines",
@@ -301,6 +310,14 @@
         },
         {
           "component": "typescript",
+          "features": []
+        },
+        {
+          "component": "libtiff",
+          "features": []
+        },
+        {
+          "component": "xmp_toolkit_sdk",
           "features": []
         }
       ]
@@ -335,7 +352,6 @@
           "component": "graphic_2d",
           "features": [
             "graphic_2d_feature_rs_enable_eglimage = true",
-	    "graphic_2d_feature_rs_enable_uni_render = true",
             "graphic_2d_feature_use_texgine = true",
             "graphic_2d_feature_upgrade_skia = true"
           ]
@@ -376,6 +392,10 @@
             "hiview_enable_leak_detector = true",
             "hiview_enable_performance_monitor = true"
           ]
+        },
+        {
+          "component": "api_metrics",
+          "features": []
         }
       ]
     },
@@ -422,6 +442,15 @@
       "components": [
         {
           "component": "ace_ets2bundle",
+          "features": []
+        }
+      ]
+    },
+    {
+      "subsystem": "officeservice",
+      "components": [
+        {
+          "component": "object_editor",
           "features": []
         }
       ]

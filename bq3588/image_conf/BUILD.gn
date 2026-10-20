@@ -29,9 +29,16 @@ ohos_copy("updater_ramdisk_image_conf_for_asan") {
 }
 
 group("custom_image_conf") {
+  if (is_asan) {
     deps = [
-      #":ramdisk_image_conf_for_asan",
+      ":ramdisk_image_conf_for_asan",
       ":system_image_conf_for_asan",
-      #":updater_ramdisk_image_conf_for_asan",
+      ":updater_ramdisk_image_conf_for_asan",
     ]
+  }
+  else {
+    deps = [
+      ":system_image_conf_for_asan",
+    ]
+  }
 }

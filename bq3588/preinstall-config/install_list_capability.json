@@ -51,7 +51,7 @@
         },
         {
             "bundleName": "com.ohos.backgroundtaskmgr.resources",
-            "app_signature" : ["72BE2C651A9E0C57B4BB67825BA6F8180FC883858434712150A55C17C7E1A6F7"],
+            "app_signature" : ["EFDBE35DD45860CE04BA8DB3F38C0DA15233F6FDEC2B031D1721923FFA5E309C"],
             "singleton": true,
             "allowAppDesktopIconHide": true
         },
@@ -83,6 +83,14 @@
             "bundleName": "com.ohos.telephonydataability",
             "app_signature" : ["D729F438E1EF2E154994E2B077F6C0CD592BA9F9C938BB428FCDA564FF805EE4"],
             "associatedWakeUp": true,
+            "allowAppUsePrivilegeExtension": true
+        },
+        {
+            "bundleName": "com.huawei.ohos.hiviewx",
+            "singleton": true,
+            "keepAlive": true,
+            "app_signature" : ["57D4E9DFE7504D12EB6ACAF39876F420BCABCA2F4721989B90FD2E4F1FB7ED2B"],
+            "allowCommonEvent": [],
             "allowAppUsePrivilegeExtension": true
         },
         {
@@ -135,7 +143,8 @@
             "bundleName": "com.ohos.dlpmanager",
             "app_signature": [
                 "E3F4322139E0109BAFAD8DA4096762068E31708C3CF201780E736D377D60B639",
-                "5FEDFF587F4109E565B96512404D606D539C8DFFCE1424ACBD1B2A7D3E843D4D"
+                "5FEDFF587F4109E565B96512404D606D539C8DFFCE1424ACBD1B2A7D3E843D4D",
+                "5765880207853296051"
             ],
             "allowAppUsePrivilegeExtension": true,
             "allowAppDesktopIconHide": true

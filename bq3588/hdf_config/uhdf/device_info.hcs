@@ -44,11 +44,14 @@
         riladapter :: host {
             hostName = "riladapter_host";
             priority = 50;
-            gid = ["root"];
+            uid = "riladapter_host";
+            gid = ["riladapter_host", "shell", "root", "system"];
+            caps = ["DAC_OVERRIDE", "DAC_READ_SEARCH", "CAP_NET_ADMIN", "CAP_NET_RAW"];
             riladapter_device :: device {
                 device0 :: deviceNode {
                     policy = 2;
                     priority = 100;
+                    preload = 1;
                     moduleName = "libril_driver.z.so";
                     serviceName = "ril_service";
                 }
@@ -140,6 +143,20 @@
                     serviceName = "usb_interface_service";
                     deviceMatchAttr = "usb_device_interface_driver";
                 }
+                device1 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libusb_device_driver.z.so";
+                    serviceName = "usb_device_interface_service";
+                    deviceMatchAttr = "usb_device_interface_driver";
+                }
+                device2 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libusb_port_driver.z.so";
+                    serviceName = "usb_port_interface_service";
+                    deviceMatchAttr = "usb_device_interface_driver";
+                }
             }
             ddk_device :: device {
                 device0 :: deviceNode {
@@ -147,6 +164,22 @@
                     priority = 100;
                     moduleName = "libusb_ddk_driver.z.so";
                     serviceName = "usb_ddk_service";
+                }
+            }
+            usb_serial_device :: device {
+                device0 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libusb_serial_ddk_driver.z.so";
+                    serviceName = "usb_serial_ddk_service";
+                }
+            }
+            scsi_device :: device {
+                device0 :: deviceNode {
+                    policy = 2;
+                    priority = 100;
+                    moduleName = "libscsi_ddk_driver.z.so";
+                    serviceName = "scsi_peripheral_ddk_service";
                 }
             }
         }
@@ -646,7 +679,7 @@
                 device0 :: deviceNode {
                     policy = 2;
                     priority = 100;
-                    moduleName = "libnnrt_driver.z.so";
+                    moduleName = "libnnrt_driver_2.1.z.so";
                     serviceName = "nnrt_device_service";
                 }
             }
