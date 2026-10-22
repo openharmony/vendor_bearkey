@@ -17,20 +17,20 @@ import("//drivers/hdf_core/adapter/uhdf2/hcs/hcs.gni")
 hdf_hcb("hdf_default.hcb") {
   source = "./hdf.hcs"
   part_name = "product_bq3588"
-  subsystem_name = "product_bearkey"
+  subsystem_name = "product_bq3588"
 }
 
 hdf_cfg("hdf_devhost.cfg") {
   source = "./hdf.hcs"
   part_name = "product_bq3588"
-  subsystem_name = "product_bearkey"
+  subsystem_name = "product_bq3588"
 }
 
 ohos_prebuilt_etc("hdf_peripheral.cfg") {
   source = "hdf_peripheral.cfg"
   relative_install_dir = "init"
   install_images = [ chipset_base_dir ]
-  subsystem_name = "product_bearkey"
+  subsystem_name = "product_bq3588"
   part_name = "product_bq3588"
 }
 
