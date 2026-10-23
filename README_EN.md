@@ -17,7 +17,6 @@ This repository is used to store HDF configuration information, product definiti
 │   ├── audio               # Audio ALSA solution parameter configuration
 ├── hdf_config              # HDF driver hcs file configuration for audio, camera, device_info, sensor, etc.
 ├── image_conf              # Ramdisk, system, updater partition size parameter configuration
-├── ohos.build              # Build component control script
 ├── preinstall-config       # Pre-installed app JSON configuration file
 ├── product.gni             # Product configuration gni
 ├── resourceschedule        # Cgroup related JSON configuration files
