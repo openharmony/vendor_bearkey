@@ -1,30 +1,29 @@
 # vendor_bearkey
 
-## 介绍
+## Introduction
 
-This repository is used to store HDF configuration information, product definition information for the corresponding development board (product form) of BQ3588HM.
+This repository is used to store HDF configuration information, product definition information for the corresponding development board (product form) of Bearkey BQ3588HM.
 
-## 目录
+## Directory
 
-```
-vendor/bearkey/bq3588       # Bearkey BQ3588HM
-├── bluetooth               # bluetooth drivers and firmware
+```text
+/vendor/bearkey/bq3588
+.
+├── bluetooth               # Bluetooth drivers and firmware
+├── config.json             # Product feature configuration
 ├── default_app_config      # Default app configuration
 ├── etc                     # Hardware, product parameter configuration
 ├── hals
 │   ├── audio               # Audio ALSA solution parameter configuration
 ├── hdf_config              # HDF driver hcs file configuration for audio, camera, device_info, sensor, etc.
 ├── image_conf              # Ramdisk, system, updater partition size parameter configuration
-├── modules                 # Kernel modules build script
 ├── preinstall-config       # Pre-installed app JSON configuration file
+├── product.gni             # Product configuration gni
 ├── resourceschedule        # Cgroup related JSON configuration files
 ├── security_config         # Security related JSON configuration files
+├── sepolicy                # SELinux permission configuration file
 ├── updater_config          # Updater configuration file
-├── window_config           # Window configuration XML file
-├── bundle.json             # Build component configuration
-├── config.json             # Product feature configuration
-├── ohos.build              # Build component control script
-└── product.gni             # Product configuration gni
+└── window_config           # Window configuration XML file
 ```
 
 ## Usage
@@ -35,8 +34,8 @@ vendor/bearkey/bq3588       # Bearkey BQ3588HM
 
 See the LICENSE file in this directory.
 
-## 相关仓
+## Related Repositories
 
-* [device/board/bearkey](https://gitcode.com/openharmony-sig/device_board_bearkey)
-* [device/soc/rockchip](https://gitcode.com/openharmony/device_soc_rockchip)
+[device_board_bearkey](https://gitcode.com/openharmony-sig/device_board_bearkey)
 
+[device_soc_rockchip](https://gitcode.com/openharmony/device_soc_rockchip)
