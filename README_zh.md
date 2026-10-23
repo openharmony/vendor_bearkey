@@ -17,7 +17,6 @@
 │   ├── audio               #audio alsa方案参数配置
 ├── hdf_config              #audio, camera, device_info, sensor等HDF驱动hcs文件配置
 ├── image_conf              #ramdisk, system, updater分区大小参数配置
-├── ohos.build              #编译组件控制脚本
 ├── preinstall-config       #预装app json配置文件
 ├── product.gni             #product配置gni
 ├── resourceschedule        #cgroup相关json配置文件
