@@ -26,7 +26,7 @@ ohos_prebuilt_etc("codec_adapter_capabilities.hcb") {
   source = hcs_outputs[0]
   relative_install_dir = "hdfconfig"
   install_images = [ chipset_base_dir ]
-  subsystem_name = "product_bearkey"
+  subsystem_name = "product_bq3588"
   part_name = "product_bq3588"
 }
 

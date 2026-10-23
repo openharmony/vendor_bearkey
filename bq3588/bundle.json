@@ -1,0 +1,45 @@
+{
+    "name": "@ohos/product_bq3588",
+    "description": "vendor bundle.",
+    "version": 3.2,
+    "license": "Apache License 2.0",
+    "publishAs": "code-segment",
+    "segment": {
+      "destPath": "vendor/bearkey/bq3588"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+      "name": "product_bq3588",
+      "subsystem": "product_bq3588",
+      "syscap": [],
+      "features": [],
+      "adapted_system_type": [ "standard"],
+      "hisysevent_config": [],
+      "rom": "",
+      "ram": "",
+      "deps": {
+        "components": [
+          "c_utils",
+          "hilog"
+        ]
+      },
+      "build": {
+        "sub_component": [
+          "//vendor/bearkey/bq3588/default_app_config:default_app_config",
+          "//vendor/bearkey/bq3588/image_conf:custom_image_conf",
+          "//vendor/bearkey/bq3588/preinstall-config:preinstall-config",
+          "//vendor/bearkey/bq3588/resourceschedule:resourceschedule",
+          "//vendor/bearkey/bq3588/etc:product_etc_conf",
+          "//vendor/bearkey/bq3588/hals/audio:hdf_audio_config",
+          "//vendor/bearkey/bq3588/hals/codec/:hdf_codec_config",
+          "//vendor/bearkey/bq3588/hdf_config/uhdf:hdf_config",
+          "//vendor/bearkey/bq3588/window_config:window_config",
+          "//vendor/bearkey/bq3588/bluetooth:libbt_vendor",
+          "//vendor/bearkey/bq3588/bluetooth:BCM4362A2.hcd"
+        ],
+        "inner_kits":[],
+        "test": []
+      }
+    }
+}

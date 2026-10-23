@@ -25,10 +25,28 @@
       ]
     },
     {
-      "subsystem": "rockchip_products",
+      "subsystem": "product_bq3588",
       "components": [
         {
-          "component": "rockchip_products",
+          "component": "product_bq3588",
+          "features": []
+        }
+      ]
+    },
+    {
+      "subsystem": "device_bq3588",
+      "components": [
+        {
+          "component": "device_bq3588",
+          "features": []
+        }
+      ]
+    },
+    {
+      "subsystem": "soc_rk3588",
+      "components": [
+        {
+          "component": "soc_rk3588",
           "features": []
         }
       ]
@@ -99,6 +117,12 @@
           "features": [
             "drivers_peripheral_codec_feature_support_omx_extend_test = true",
             "drivers_peripheral_codec_feature_support_hdi_v1 = true"
+          ]
+        },
+        {
+          "component": "drivers_peripheral_camera",
+          "features": [
+            "drivers_peripheral_camera_feature_fork_dma = true"
           ]
         },
         {
