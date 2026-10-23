@@ -55,6 +55,8 @@
                 <policyitem type="copyright" name="Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd. " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
                 <policyitem type="copyright" name="Copyright 2009-2012 Broadcom Corporation " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
                 <policyitem type="copyright" name="Copyright (C) 2009-2012 Broadcom Corporation " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
+                <policyitem type="copyright" name="Copyright (C) 1999-2012 Broadcom Corporation " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
+                <policyitem type="copyright" name="Copyright 2015 Broadcom Corporation " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
             </policy>
         </policylist>
 
