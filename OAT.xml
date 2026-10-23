@@ -53,7 +53,9 @@
                 <!--policyitem type="compatibility" name="GPL-2.0+" path=".*" desc="Process that runs independently, invoked by the X process."/-->
                 <!--policyitem type="license" name="LGPL" path=".*" desc="Dynamically linked by module X"/-->
                 <policyitem type="copyright" name="Copyright © 2015-2026 Xiamen Bearkey Technology Co., Ltd. " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
-	    </policy>
+                <policyitem type="copyright" name="Copyright 2009-2012 Broadcom Corporation " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
+                <policyitem type="copyright" name="Copyright (C) 2009-2012 Broadcom Corporation " path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
+            </policy>
         </policylist>
 
         <filefilterlist>
