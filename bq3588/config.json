@@ -19,8 +19,10 @@
         {
           "component": "selinux_adapter",
           "features": [
-	    "selinux_adapter_enforce = false"
-	  ]
+            "selinux_adapter_enforce = false",
+            "selinux_adapter_extra_args = \"--product-args build_with_ohos=enable\"",
+            "selinux_adapter_build_path = base/security/selinux_adapter/sepolicy/ohos_product:vendor/bearkey/bq3588/sepolicy"
+          ]
         }
       ]
     },
