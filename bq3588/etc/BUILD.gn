@@ -43,10 +43,31 @@ action("storage_daemon_disk_config_override") {
   ]
 }
 
+
+ohos_prebuilt_etc("passwd") {
+  source = "./passwd"
+  install_images = [
+    "system",
+    "updater",
+  ]
+  part_name = "product_bq3588"
+}
+
+ohos_prebuilt_etc("group") {
+  source = "./group"
+  install_images = [
+    "system",
+    "updater",
+  ]
+  part_name = "product_bq3588"
+}
+
 group("product_etc_conf") {
   deps = [
     ":para_for_chip_prod",
     ":para_for_sys_prod",
     ":storage_daemon_disk_config_override",
+    ":passwd",
+    ":group",
   ]
 }
