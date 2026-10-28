@@ -12,6 +12,9 @@
 # limitations under the License.
 
 import("//build/ohos.gni")
+foundation_daemon_out_dir = get_label_info(
+    "//foundation/filemanagement/storage_service/services/storage_daemon:storage_daemon_disk_config",
+    "target_out_dir")
 
 ohos_prebuilt_etc("para_for_chip_prod") {
   source = "./param/hardware_rk3588.para"
@@ -27,17 +30,23 @@ ohos_prebuilt_etc("para_for_sys_prod") {
   part_name = "product_bq3588"
 }
 
-ohos_prebuilt_etc("storage_daemon_disk_config") {
-  source = "disk_config"
-  relative_install_dir = "storage_daemon"
-  install_images = [ chipset_base_dir ]
-  part_name = "product_bq3588"
+action("storage_daemon_disk_config_override") {
+  deps = [
+    "//foundation/filemanagement/storage_service/services/storage_daemon:storage_daemon_disk_config",
+  ]
+  script = "/usr/bin/env"
+  outputs = [ "$target_out_dir/disk_config_override.stamp" ]
+  args = [
+    "cp", "-f",
+    rebase_path("disk_config", root_build_dir),
+    rebase_path("${foundation_daemon_out_dir}/disk_config", root_build_dir),
+  ]
 }
 
 group("product_etc_conf") {
   deps = [
     ":para_for_chip_prod",
     ":para_for_sys_prod",
-    ":storage_daemon_disk_config",
+    ":storage_daemon_disk_config_override",
   ]
 }
