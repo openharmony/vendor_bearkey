@@ -11,6 +11,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-allow system_core_hap nnrt_host:binder { call };
-allow system_core_hap nnrt_host:fd { use };
-allow system_core_hap hdf_nnrt_device_service:hdf_devmgr_class { get };
+#allow system_core_hap nnrt_host:binder { call };
+#allow system_core_hap nnrt_host:fd { use };
+#allow system_core_hap hdf_nnrt_device_service:hdf_devmgr_class { get };

@@ -13,5 +13,5 @@
 
 # avc:  denied  { siginh } for  pid=3134 comm="hdf_devhost" scontext=u:r:chipset_init:s0 tcontext=u:r:nnrt_host:s0 tclass=process permissive=0
 # avc:  denied  { rlimitinh } for  pid=3134 comm="hdf_devhost" scontext=u:r:chipset_init:s0 tcontext=u:r:nnrt_host:s0 tclass=process permissive=0
-allow chipset_init nnrt_host:process { siginh rlimitinh transition };
+#allow chipset_init nnrt_host:process { siginh rlimitinh transition };
 
