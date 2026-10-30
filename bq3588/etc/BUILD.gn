@@ -62,6 +62,12 @@ ohos_prebuilt_etc("group") {
   part_name = "product_bq3588"
 }
 
+ohos_prebuilt_etc("ril.para") {
+  source = "ril.para"
+  part_name = "product_bq3588"
+  module_install_dir = "etc/param"
+}
+
 group("product_etc_conf") {
   deps = [
     ":para_for_chip_prod",
@@ -69,5 +75,6 @@ group("product_etc_conf") {
     ":storage_daemon_disk_config_override",
     ":passwd",
     ":group",
+    ":ril.para",
   ]
 }
