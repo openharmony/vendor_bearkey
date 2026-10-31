@@ -23,7 +23,7 @@ root {
     normal_preview :: pipeline_spec {
         name = "normal_preview";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
@@ -41,7 +41,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -109,7 +109,7 @@ root {
     normal_video :: pipeline_spec {
         name = "normal_video";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
@@ -127,7 +127,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -195,12 +195,12 @@ root {
     normal_preview_preview :: pipeline_spec {
         name = "normal_preview_preview";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -208,12 +208,12 @@ root {
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -235,7 +235,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -251,7 +251,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -308,7 +308,7 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -316,7 +316,7 @@ root {
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
@@ -343,7 +343,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -359,7 +359,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -411,12 +411,12 @@ root {
     normal_preview_preview_snapshot :: pipeline_spec {
         name = "normal_preview_preview_snapshot";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -424,18 +424,18 @@ root {
             }
         }
         fork_1 :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 1;
             }
             out_port_1 :: port_spec {
@@ -446,12 +446,12 @@ root {
             }
         }
         fork_2 :: node_spec {
-            name = "fork#1";
+            name = "rk_fork#1";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -473,7 +473,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -489,7 +489,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -505,7 +505,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -616,12 +616,12 @@ root {
     normal_preview_preview_video :: pipeline_spec {
         name = "normal_preview_preview_video";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -629,18 +629,18 @@ root {
             }
         }
         fork_1 :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 1;
             }
             out_port_1 :: port_spec {
@@ -656,7 +656,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -683,12 +683,12 @@ root {
             }
         }
         fork_2 :: node_spec {
-            name = "fork#1";
+            name = "rk_fork#1";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -710,7 +710,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -726,7 +726,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -805,12 +805,12 @@ root {
     normal_preview_analyze :: pipeline_spec {
         name = "normal_preview_analyze";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -818,12 +818,12 @@ root {
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -845,7 +845,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -861,7 +861,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -929,7 +929,7 @@ root {
     normal_snapshot :: pipeline_spec {
         name = "normal_snapshot";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
@@ -945,7 +945,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
         }
@@ -977,22 +977,22 @@ root {
     normal_preview_snapshot :: pipeline_spec {
         name = "normal_preview_snapshot";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1014,7 +1014,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1030,7 +1030,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1135,12 +1135,12 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
@@ -1167,7 +1167,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1183,7 +1183,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1283,28 +1283,28 @@ root {
     normal_preview_snapshot_analyze :: pipeline_spec {
         name = "normal_preview_snapshot_analyze";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
             }
         }
         fork_1 :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 1;
             }
             out_port_1 :: port_spec {
@@ -1315,12 +1315,12 @@ root {
             }
         }
         fork_2 :: node_spec {
-            name = "fork#1";
+            name = "rk_fork#1";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1342,7 +1342,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1358,7 +1358,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1374,7 +1374,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1501,12 +1501,12 @@ root {
     normal_preview_video_snapshot :: pipeline_spec {
         name = "normal_preview_video_snapshot";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -1514,18 +1514,18 @@ root {
             }
         }
         fork_1 :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 1;
             }
             out_port_1 :: port_spec {
@@ -1536,12 +1536,12 @@ root {
             }
         }
         fork_2 :: node_spec {
-            name = "fork#1";
+            name = "rk_fork#1";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1563,7 +1563,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1579,7 +1579,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1595,7 +1595,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1727,7 +1727,7 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
                 width = 0;
                 height = 0;
@@ -1735,7 +1735,7 @@ root {
             }
         }
         fork_1 :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
@@ -1746,7 +1746,7 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 1;
             }
             out_port_1 :: port_spec {
@@ -1757,12 +1757,12 @@ root {
             }
         }
         fork_2 :: node_spec {
-            name = "fork#1";
+            name = "rk_fork#1";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1784,7 +1784,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1800,7 +1800,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#1";
+                peerPortNodeName = "rk_fork#1";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1816,7 +1816,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1943,22 +1943,22 @@ root {
     normal_preview_video :: pipeline_spec {
         name = "normal_preview_video";
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1980,7 +1980,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -1996,7 +1996,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -2085,12 +2085,12 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 1;
             }
         }
         fork :: node_spec {
-            name = "fork#0";
+            name = "rk_fork#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
@@ -2117,7 +2117,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -2133,7 +2133,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out1";
-                peerPortNodeName = "fork#0";
+                peerPortNodeName = "rk_fork#0";
                 direction = 0;
             }
             out_port_0 :: port_spec {
@@ -2232,7 +2232,7 @@ root {
             }
         }
         v4l2_source :: node_spec {
-            name = "v4l2_source#0";
+            name = "rk_v4l2_source#0";
             status = "new";
             out_port_0 :: port_spec {
                 name = "out0";
@@ -2247,7 +2247,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "v4l2_source#0";
+                peerPortNodeName = "rk_v4l2_source#0";
                 direction = 0;
             }
             in_port_1 :: port_spec {
