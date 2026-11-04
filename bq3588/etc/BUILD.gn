@@ -68,6 +68,12 @@ ohos_prebuilt_etc("ril.para") {
   module_install_dir = "etc/param"
 }
 
+ohos_prebuilt_etc("ueventd.config") {
+  source = "ueventd.config"
+  install_images = [ chipset_base_dir ]
+  part_name = "product_bq3588"
+}
+
 group("product_etc_conf") {
   deps = [
     ":para_for_chip_prod",
@@ -76,5 +82,6 @@ group("product_etc_conf") {
     ":passwd",
     ":group",
     ":ril.para",
+    ":ueventd.config",
   ]
 }
